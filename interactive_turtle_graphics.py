@@ -2,7 +2,6 @@
 # Author: Arohasina Ravoahanginiaina
 # Username: arohasina
 #
-# Assignment:HW03: Fully Functional Gitty Psychedelic Robotic Turtles
 # Purpose: to draw something complex using turtle module
 #################################################################################
 # Acknowledgements:
@@ -110,7 +109,7 @@ def draw_person(t):
     t.penup()
     t.setposition(40,-90)
     t.pendown()
-    t.fillcolor("#FF66CC")
+    t.fillcolor("pink")
     t.begin_fill()
     t.right(120)
     t.forward(140)
@@ -189,12 +188,13 @@ def main():
 
     :return: None
     """
+    text_display=input("What text would you like to display on the screen? ")
     turtle.colormode(255)
 
     wn = turtle.Screen()
     wn.setup(width=700, height=550)
     wn.bgpic("my_background.gif")
-    wn.title("Aro's Perfect Day")
+    wn.title("Interactive Turtle Graphics")
 
     t=turtle.Turtle()
 
@@ -203,7 +203,7 @@ def main():
     draw_window(wn, t)
     draw_sun(wn,t)
     draw_person(t)
-    write_text(t, "Aro's Perfect Day :)")
+    write_text(t, text_display)
 
     wn.exitonclick()
 
