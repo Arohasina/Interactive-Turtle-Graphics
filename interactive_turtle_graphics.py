@@ -2,7 +2,7 @@
 # Author: Arohasina Ravoahanginiaina
 # Username: arohasina
 #
-# Purpose: to draw something complex using turtle module
+# Purpose: to draw something complex using turtle module, ask for user input and implementing it in the code
 #################################################################################
 # Acknowledgements:
 #window image credits: <a href="https://www.flaticon.com/free-icons/window" title="window icons">Window icons created by Freepik - Flaticon</a>
@@ -167,7 +167,7 @@ def draw_person(t):
 
 def write_text(t, arg):
     """
-    Writes text to the screen.
+    Writes user input text on the screen
     :param t: a Turtle object
     :param arg: the text to be written
     :return: None
@@ -181,30 +181,30 @@ def write_text(t, arg):
 
 def main():
     """
-    Draws a house at x, y on the screen.
-    Add an image of sun
-    Draws a person next to the house
-    Add text at the top of the screen
-
+     Main function to draw the scene: a house, sun, person, and user-input text.
     :return: None
     """
     text_display=input("What text would you like to display on the screen? ")
     turtle.colormode(255)
 
-    wn = turtle.Screen()
-    wn.setup(width=700, height=550)
-    wn.bgpic("my_background.gif")
-    wn.title("Interactive Turtle Graphics")
+    # Set up the screen
+    screen = turtle.Screen()
+    screen.setup(width=700, height=550)
+    screen.bgpic("my_background.gif")
+    screen.title("Interactive Turtle Graphics")
 
+    # Create a turtle object
     t=turtle.Turtle()
 
+    # Draw the house, roof, window, sun, person, and text
     draw_main_house(t)
     draw_roof(t)
-    draw_window(wn, t)
-    draw_sun(wn,t)
+    draw_window(screen, t)
+    draw_sun(screen,t)
     draw_person(t)
     write_text(t, text_display)
 
-    wn.exitonclick()
+    screen.exitonclick()
 
-main()
+if __name__ == "__main__":
+    main()
